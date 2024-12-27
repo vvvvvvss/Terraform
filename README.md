@@ -30,3 +30,24 @@ Your configuration file specifies that you need three virtual machines. Each tim
 
 *Idempotent example:*  
 Your configuration file specifies that you need three virtual machines. Each time you apply your configuration, the number of virtual machines is always 3 virtual machines. So no matter how many times you apply, you will always have the same number of VMs in your configuration.  
+
+
+## Configuration Drift
+Configuration drift is simply unexpected changes to your infrastructure. This can happen for a number of different reasons, including manual adjustments to configurations, side effects of SDKs, CLIs, or APIs or even from malicious actors.
+
+Terraform prevents configuration drift with the state file (.tfstate) which show what the configuration of files should be. To correct the drift, you can utilize the terraform plan and refresh commands which we will look to more in depth in the coming posts.
+
+## Terraform Lifecycle
+- At the start, you will update the code of your terraform configuration file
+- Then you will initialize your project or pull the latest providers using terraform init
+- Next, the plan allows you to speculate what your changes will be
+- Validation happens automatically when your run plan but you can also validate manually
+- Finally, you will execute the terraform plan to provision infrastructure using apply
+- You can also destroy terraform infrastructure using apply or the destroy command
+
+![image](https://github.com/user-attachments/assets/281d7028-2e9c-42b1-b4fe-e3b7091e8c11)
+![image](https://github.com/user-attachments/assets/535b5bc9-ffa7-4d5e-8eaa-d296ecd4f923)
+
+
+
+https://dev.to/stevenmcgown/terraform-for-dummies-part-1-eap 
